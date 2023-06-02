@@ -19,11 +19,13 @@ public class EquillibriumIndex {
         int arr3[] = {2, 3, 5, 5};
         int arr4[] = {0};
         int arr5[] = {1, 0};
+        int arr6[] = {0, 0, 0};
         System.out.println(equillibriumIndex(arr1));
         System.out.println(equillibriumIndex(arr2));
         System.out.println(equillibriumIndex(arr3));
         System.out.println(equillibriumIndex(arr4));
         System.out.println(equillibriumIndex(arr5));
+        System.out.println(equillibriumIndex(arr6));
     }
 
     //    TODO: Corner cases not covered
@@ -55,7 +57,7 @@ public class EquillibriumIndex {
     }
 
     static int equillibriumIndex(int arr[]) {
-        int matches = -1;
+        ArrayList<Integer> matchedIndexes = new ArrayList<Integer>();
         long prefixSum = 0;
         for (int elem : arr) {
             prefixSum += elem;
@@ -65,10 +67,11 @@ public class EquillibriumIndex {
         for (int i = 0; i < arr.length; i++) {
             prefixSum -= arr[i]; // Deriving the Sum of Right Elements
             if (sumTillNow == prefixSum) {
-                return i;
+                matchedIndexes.add(i);
             }
             sumTillNow += arr[i];
         }
-        return matches;
+        System.out.println(Arrays.toString(matchedIndexes.toArray()));
+        return matchedIndexes.isEmpty() ? -1 : matchedIndexes.get(0);
     }
 }
