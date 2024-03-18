@@ -15,7 +15,34 @@ public class Client {
         s2.rollNo = 3;
 
 
+        Student s3 = new Student();
+        s3.name = "Abhishek";
+        s3.age = 15;
+        s3.rollNo = 2;
+
+
+        Student s4 = new Student();
+        s1.name = "Subham";
+        s1.age = 15;
+        s1.rollNo = 2;
+
+
+        Student s5 = new Student();
+        s1.name = "Gajendra";
+        s1.age = 15;
+        s1.rollNo = 2;
+
+
+        s3.markAttendance();
+        s3.markAttendance();
+        s3.markAttendance();
+        s3.getAge();
+        s3.setAge(32);
+
+
+
         s1.attendLiveclass();
         s2.attendLiveclass();
+        s3.showAttendance();
     }
 }

@@ -6,9 +6,14 @@ public class Client {
 //        LearnStatic learnStatic = new LearnStatic();
 //        learnStatic.getName();
 
-        FinalKeyword finalKeyword = new FinalKeyword(2);
-        finalKeyword.printA();
-        finalKeyword = new FinalKeyword(34);
-        finalKeyword.printA();
+//        FinalKeyword finalKeyword = new FinalKeyword(2);
+//        finalKeyword.printA();
+//        finalKeyword = new FinalKeyword(34);
+//        finalKeyword.printA();
+
+        Database db = new MySQLDatabase();
+        db.connect();
+        ((MySQLDatabase) db).getStoredProcedures();
+
     }
 }
